@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>yatrabuddy</title>
+    <style>
+        /* nav bar */
+        nav{
+            width: 90%;
+            height: 80px;
+            margin: auto;
+            /* border: 1px solid red; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav > div{
+            /* border: 1px solid blue; */
+            width: 500px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-weight: bolder;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        nav img{
+            width: 30%;
+            margin-left: -50px;
+        }
+        #sign-in{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #sign-in:hover{
+            background-color: lightblue;
+            cursor: pointer;
+        }
+        /* Top menu */
+        #top-menu{
+            width: 80%;
+            display: flex;
+            margin: auto;
+            margin-top: 10px;
+            font-weight: bolder;
+        }
+        #top-menu > div{
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            width: 14%;
+            margin: auto;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #top-menu > div:hover{
+            background-color: black;
+            color: white;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        /* Top poster */
+        #top-poster{
+            position: relative;
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+        }
+        #top-poster > img{
+            width: 100%;
+        }
+        #top-poster #search-bar{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            padding: 15px;
+            border-radius: 30px;
+            border-color: white;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 70%;
+            font-size: large;
+        }
+        /* Top Carousel */
+        .carousel{
+            width: 80%;
+            height: 450px;
+            /* border: 1px solid red; */
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: absolute;
+            top: 25px;
+            /* border: 1px solid blue; */
+        }
+        .slide a:hover{
+            text-decoration: underline;
+            color: blue;
+        }
+        .slide > div{
+            width: 23%;
+            display: flex;
+            margin: auto;
+            flex-direction: column;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .btn{
+            position: absolute;
+            top: 50%;
+            width: 35px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            color: black;
+            text-align: center;
+            transform: translateY(-50%);
+        }
+        #left1:first-child{
+            left: -22px;
+        }
+        #left1:hover{
+            background-color: black;
+            color: white;
+        }
+        #right1:last-child{
+            right: 0px;
+        }
+        #right1:hover{
+            background-color: black;
+            color: white;
+        }
+        /* Mid Poster */
+        #mid-poster{
+            width: 80%;
+            height: 170px;
+            margin: auto;
+            display: flex;
+            background-color: #FFFDE7;
+            padding: 0px 0px 0px 10px;
+        }
+        #mid-poster div{
+            width: 50%;
+        }
+        #mid-poster img{
+            width: 100%;
+            height: 100%;
+        }
+        #mid-poster a{
+            background-color: black;
+            color: white;
+            padding: 8px;
+            border-radius: 15px;
+        }
+        /* Mid-Section */
+        #mid-section{
+            width: 80%;
+            padding-top: 10px;
+            margin: auto;
+            font-family: sans-serif;
+        }
+        .slide1{
+            width: 100%;
+            margin: auto;
+            gap: 15px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .slide1 a:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+        .slide1 div{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            text-align: center;
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+        /* Bottom Part-1 */
+        #bottom-heading{
+            background-color: #EFEBE9;
+            width: 100%;
+            margin-top: 50px;
+        }
+        #bottom-heading h2{
+            margin-left: 12%;
+            padding-top: 30px;
+            margin-bottom: 0px;
+        }
+        #bottom-1{
+            width: 80%;
+            display: flex;
+            height: 450px;
+            margin: auto;
+        }
+        #bottom-1 div{
+            width: 30%;
+            height: 350px;
+            margin: auto;
+            text-align: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #bottom-1 a:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+        #bottom-1 img{
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="yatrabuddy.png" alt="Logo">
+    <div>
+        <a href=""><i class="fa-solid fa-pen"></i> Review</a>
+        <a href=""><i class="fa-solid fa-heart"></i> Trips</a>
+        <a href=""><i class="fa-solid fa-bell"></i> Alerts</a>
+        <a href="" id="sign-in">Sign In</a>
+        <a href=""><i class="fa-solid fa-cart-shopping"></i> Basket</a>
+    </div>
+    </nav>
+    <!-- Top Menu -->
+    <div id="top-menu">
+        <div>
+            <p>Hotels</p>
+            <i class="fa-solid fa-hotel"></i>
+        </div>
+        <div>
+            <p>Holiday Homes</p>
+            <i class="fa-solid fa-house"></i>
+        </div>
+        <div>
+            <p>Things To Do</p>
+            <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+        <div>
+            <p>Restaurant</p>
+            <i class="fa-solid fa-utensils"></i>
+        </div>
+        <div>
+            <p>Travel Stories</p>
+            <i class="fa-solid fa-globe"></i>
+        </div>
+        <div>
+            <p>More</p>
+            <i class="fa-solid fa-ellipsis"></i>
+        </div>
+    </div>
+    <!-- Top Poster -->
+    <div id="top-poster">
+        <img src="https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans@2x.webp" alt="">
+        <input type="search" placeholder="Where to?" id="search-bar">
+    </div>
+    <!-- Tour Pune -->
+  <div class="carousel">
+    <h2>Ways to Tour Pune</h2>
+    <h3>Book these experiences for a close-up look at Pune.</h3>
+    <div class="slide">
+        <div>
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/8e/b8/c8/caption.jpg?w=600&h=600&s=1" alt="">
+        <a href="https://www.tripadvisor.in/AttractionProductReview-g297654-d17807864-Immersive_culture_tour_of_Pune_by_private_car_with_guide_and_local_lunch-Pune_Pune.html">Immersive culture tour of Pune by private car with guide and local lunch</a>
+        <p>from ₹9,809 per adult</p>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7c/bc/31/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="https://www.tripadvisor.in/AttractionProductReview-g297654-d15154064-Taj_Mahal_and_Agra_Tour_from_Pune_with_Return_Commercial_Flights-Pune_Pune_Distric.html">Taj Mahal and Agra Tour from Pune with Return Commercial Flights</a>
+            <p>from ₹35,528 per adult</p>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/8e/44/da/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="https://www.tripadvisor.in/AttractionProductReview-g297654-d17774937-Pune_Walking_Tour_with_a_Punekar-Pune_Pune_District_Maharashtra.html">Immersive culture tour of Pune by private car with guide and local lunch</a>
+            <p>from ₹6,400 per group</p>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/28/d2/43/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="https://www.tripadvisor.in/AttractionProductReview-g297654-d17684416-Best_of_Pune_Private_City_Tour_with_Lunch_and_Transport-Pune_Pune_District_Maharas.html">Best of Pune Private City Tour with Lunch and Transport.</a>
+            <p>from ₹10,867 per adult</p>
+        </div>
+    </div>
+    <div class="slide">
+        <div>
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/60/28/c3/caption.jpg?w=600&h=600&s=1" alt="">
+        <a href="">Immersive culture tour of Pune by private car with guide and local lunch</a>
+        <p>from Rs9,809 per adult</p>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/8e/44/da/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="">Immersive culture tour of Pune by private car with guide and local lunch</a>
+            <p>from Rs9,809 per adult</p>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5e/03/2d/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="">Immersive culture tour of Pune by private car with guide and local lunch</a>
+            <p>from Rs9,809 per adult</p>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/1c/33/d4/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="">Immersive culture tour of Pune by private car with guide and local lunch</a>
+            <p>from Rs9,809 per adult</p>
+        </div>
+    </div>
+    <div class="slide">
+        <div>
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5e/03/2d/caption.jpg?w=600&h=600&s=1" alt="">
+        <a href="">Immersive culture tour of Pune by private car with guide and local lunch</a>
+        <p>from Rs9,809 per adult</p>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/1c/33/d4/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="">Immersive culture tour of Pune by private car with guide and local lunch</a>
+            <p>from Rs9,809 per adult</p>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/63/a7/58/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="">Immersive culture tour of Pune by private car with guide and local lunch</a>
+            <p>from Rs9,809 per adult</p>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/68/d4/ab/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="">Immersive culture tour of Pune by private car with guide and local lunch</a>
+            <p>from Rs9,809 per adult</p>
+        </div>
+    </div>
+    <button id="left1" class="btn" onclick="goPrev()"><i class="fa-solid fa-arrow-left"></i></button>
+    <button id="right1" class="btn" onclick="goNext()"><i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+  <!-- Mid-Poster -->
+  <div id="mid-poster">
+    <div>
+        <h1>Get Out There</h1>
+        <h4>Best of the Best tours, attraction & activities you won't want to miss.</h4>
+        <a href="https://www.tripadvisor.in/TravelersChoice-ThingsToDo-g1">See the list</a>
+    </div>
+    <div>
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/f7/1d/4d/caption.jpg?w=1000&h=-1&s=1" alt="">
+    </div>
+  </div>
+  <!-- Mid-Section -->
+  <div id="mid-section">
+    <h2>Ring in the new year</h2>
+    <h3>New Year's Eve spots to welcome 2023</h3>
+    <div class="slide1">
+        <div>
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/6d/df/ec/fireworks-yao-rooftop.jpg?w=300&h=300&s=1" alt="">
+        <a href="">Bangkok,Thailand</a>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/33/f3/33/caption.jpg?w=300&h=300&s=1" alt="">
+            <a href="">Taipei,Taiwan</a>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/62/c3/88/caption.jpg?w=300&h=300&s=1" alt="">
+            <a href="">Kyoto,Japan</a>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/7c/eb/cb/photo0jpg.jpg?w=300&h=300&s=1" alt="">
+            <a href="">Tokyo,Japan</a>
+        </div>
+
+        <div>
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/7b/23/c5/photo2jpg.jpg?w=300&h=-1&s=1" alt="">
+        <a href="">Seoul,South Korea</a>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/2c/18/1f/photo9jpg.jpg?w=300&h=-1&s=1" alt="">
+            <a href="">Bali,Indonesia</a>
+    
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/29/d4/40/night-view-of-the-hsbc.jpg?w=300&h=300&s=1" alt="">
+            <a href="">Singapore,Singapore</a>
+
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f7/a4/bd/baga-beach.jpg?w=300&h=300&s=1" alt="">
+            <a href="">Goa,India</a>
+       </div>
+    </div>
+  </div>
+  <!-- Bottom Part 1 -->
+  <div id="bottom-heading">
+    <h2>More to Explore</h2>
+    <div id="bottom-1">
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/ff/64/b3/b1e43685-a4e8-4163.jpg?w=400&h=300&s=1" alt="">
+            <a href="">Best new things to do in Japan 2022</a>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/ff/65/7b/3f7b9f66-88a6-40e8.jpg?w=400&h=300&s=1" alt="">
+            <a href="">7 Bangkok hotels that highlight Thailand's spectacular architecture</a>
+        </div>
+        <div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/ff/b7/8b/b03fabe4-8177-471a.jpg?w=400&h=-1&s=1" alt="">
+            <a href="">Guide to planning a day trip to the Blue Mountains from Sydney</a>
+        </div>
+    </div>
+  </div>
+  <!-- Bottom - 2  -->
+</body>
+
+
+<script>
+    let slides = document.querySelectorAll(".slide");
+    let counter=0;
+
+    slides.forEach((slide,index)=>{
+        slide.style.left = `${index*100}%`
+    });
+
+    const slideDiv = () => {
+        slides.forEach((slide)=>{
+            slide.style.transform = `translateX(-${counter*100}%)`
+        })
+    }
+
+
+    const goNext = () => {
+        counter++
+        slideDiv()
+    };
+
+    const goPrev = () => {
+        counter--
+        slideDiv()
+    }
+</script>
+</html>
