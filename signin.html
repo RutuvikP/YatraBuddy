@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Sign In</title>
+    <style>
+        /* Sign In */
+        .signin{
+            display: grid;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            grid-template-columns: repeat(1,1fr);
+            border-radius: 10px;
+            max-width: 400px;
+        }
+        .signin input{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .signin button{
+            background-color: black;
+            color: white;
+            width: 60%;
+            margin: auto;
+            padding: 10px 0px;
+            border-radius: 25px;
+            margin-top: 10px;
+        }
+        .signin img{
+            width: 20%;
+            margin-left: 40%;
+        }
+        .signin input{
+            padding: 5px;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="signin">
+        <img src="/plane-gc79bf70c5_1280.png" alt="">
+        <h2 id="heading">Welcome back.</h2>
+        <label for="email">Email address</label>
+        <input type="email" name="email" id="signinMail" placeholder="Email">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="signinPass" placeholder="Password">
+        <a href="#">Forgot password?</a>
+        <button><a id="gotoMain">Sign In</a></button>
+        <a id="signupBTN" href="/signup.html">Not a member?</a>
+    </div>
+</body>
+<script>
+    let heading=document.getElementById("heading");
+    let signinBTN=document.querySelector("button");
+    let userData= JSON.parse(localStorage.getItem("userdata"));
+    let email = document.getElementById("signinMail");
+    let password = document.getElementById("signinPass");
+    let gotoMain=document.getElementById("gotoMain")
+    signinBTN.addEventListener("click",()=>{
+        userData.forEach((element,index) => {
+        if(element.email==email.value && element.password==password.value){
+            gotoMain.href="/index.html";
+        }
+        else{
+            heading.innerText="Wrong email/password";
+        }
+        });
+    })
+</script>
+</html>

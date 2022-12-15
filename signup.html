@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+                /* Sign up */
+        .signup{
+            display: grid;
+            text-align: center;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            grid-template-columns: repeat(1,1fr);
+            border-radius: 10px;
+            max-width: 400px;
+        }
+        .signup input{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .signup button{
+            background-color: black;
+            color: white;
+            width: 60%;
+            margin: auto;
+            padding: 10px 0px;
+            border-radius: 25px;
+            margin-top: 10px;
+        }
+        .signup img{
+            width: 20%;
+            margin-left: 40%;
+        }
+        .signup input{
+            padding: 5px;
+        }
+        a:first-child{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup">
+        <img src="/plane-gc79bf70c5_1280.png" alt="">
+        <h2>Join to unlock best of YatraBuddy</h2>
+        <label for="email">Email address</label>
+        <input type="email" name="email" id="signinMail" placeholder="Email">
+        <label for="password">Create Password</label>
+        <input type="password" name="password" id="signinPass" placeholder="Password">
+        <button><a href="/signin.html">Join</a></button>
+        <a href="/signin.html">Already a member?</a>
+    </div>
+</body>
+<script>
+    let userData=[];
+    let email = document.getElementById("signinMail");
+    let password = document.getElementById("signinPass");
+    let joinBTN=document.querySelector("button");
+
+    joinBTN.addEventListener("click",()=>{
+        formData={
+            email: email.value,
+            password: password.value
+        }
+        userData.push(formData);
+        localStorage.setItem("userdata",JSON.stringify(userData))
+    })
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Sign In Options</title>
+    <style>
+        .banner{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .banner div{
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+            border-radius: 25px;
+            width: 80%;
+            margin: auto;
+            margin-bottom: 10px;
+            border: 2px solid black;
+            padding: 10px 5px;
+        }
+        .banner a{
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+        .banner div:hover{
+            background: lightblue;
+        }
+        .banner img{
+            width: 20%;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <img src="/plane-gc79bf70c5_1280.png" alt="">
+        <h2>Sign In to unlock the best of YatraBuddy</h2>
+        <div>
+            <i class="fa-brands fa-google"></i>
+            <a href="https://accounts.google.com/o/oauth2/auth/identifier?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.tripadvisor.in%3Fid%3Dauth670216&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&include_granted_scopes=true&client_id=1070328450902.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.tripadvisor.in&fetch_basic_profile=true&gsiwebsdk=2&service=lso&o2v=1&flowName=GeneralOAuthFlow">Continue with Google</a>
+        </div>
+        <div>
+            <i class="fa-brands fa-facebook"></i>
+            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=162729813767876&kid_directed_site=0&app_id=162729813767876&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv6.0%2Fdialog%2Foauth%3Fapp_id%3D162729813767876%26cbt%3D1671103896530%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df3287b1808c284%2526domain%253Dwww.tripadvisor.in%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.tripadvisor.in%25252Ff2e5feace07f24%2526relation%253Dopener%26client_id%3D162729813767876%26display%3Dpopup%26domain%3Dwww.tripadvisor.in%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.tripadvisor.in%252FRegistrationController%253Fflow%253Dsign_up_and_save%2526flowOrigin%253Dlogin%2526pid%253D40486%2526hideNavigation%253Dtrue%2526userRequestedForce%253Dtrue%2526returnTo%253D%2526isLithium%253Dtrue%2526locationId%253D-1%2526requireSecure%253Dfalse%26locale%3Den_GB%26logger_id%3Df1685b23a73e7c8%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df3ba6104f2e798%2526domain%253Dwww.tripadvisor.in%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.tripadvisor.in%25252Ff2e5feace07f24%2526relation%253Dopener%2526frame%253Df1cfae4126c88f%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Demail%252Cuser_friends%26sdk%3Djoey%26version%3Dv6.0%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3ba6104f2e798%26domain%3Dwww.tripadvisor.in%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.tripadvisor.in%252Ff2e5feace07f24%26relation%3Dopener%26frame%3Df1cfae4126c88f%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=en_GB&pl_dbl=0">Continue with Facebook</a>
+        </div>
+        <div>
+            <i class="fa-solid fa-envelope"></i>
+            <a id="emailOption" href="signin.html">Continue with Email</a>
+        </div>
+    </div>
+</body>
+</html>
