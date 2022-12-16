@@ -48,20 +48,21 @@
         <img src="/plane-gc79bf70c5_1280.png" alt="">
         <h2>Join to unlock best of YatraBuddy</h2>
         <label for="email">Email address</label>
-        <input type="email" name="email" id="signinMail" placeholder="Email">
+        <input type="email" name="email" id="signupMail" placeholder="Email">
         <label for="password">Create Password</label>
-        <input type="password" name="password" id="signinPass" placeholder="Password">
-        <button><a href="/signin.html">Join</a></button>
-        <a href="/signin.html">Already a member?</a>
+        <input type="password" name="password" id="signupPass" placeholder="Password">
+        <button><a href="/index.html">Join</a></button>
+        <a href="/index.html">Already a member?</a>
     </div>
 </body>
 <script>
     let userData=[];
-    let email = document.getElementById("signinMail");
-    let password = document.getElementById("signinPass");
+    let email = document.getElementById("signupMail");
+    let password = document.getElementById("signupPass");
     let joinBTN=document.querySelector("button");
 
     joinBTN.addEventListener("click",()=>{
+        alert("Now Sign-In to your account from home-page");
         formData={
             email: email.value,
             password: password.value

@@ -29,13 +29,16 @@
             justify-content: space-around;
             font-weight: bolder;
         }
-        a{
+        nav a{
             text-decoration: none;
             color: black;
         }
         nav img{
             width: 30%;
             margin-left: -50px;
+        }
+        nav img:hover{
+            cursor: pointer;
         }
         #sign-in{
             background-color: black;
@@ -111,6 +114,10 @@
             top: 25px;
             /* border: 1px solid blue; */
         }
+        .slide a{
+            text-decoration: none;
+            color: black;
+        }
         .slide a:hover{
             text-decoration: underline;
             color: blue;
@@ -170,6 +177,7 @@
             color: white;
             padding: 8px;
             border-radius: 15px;
+            text-decoration: none;
         }
         /* Mid-Section */
         #mid-section{
@@ -184,6 +192,11 @@
             gap: 15px;
             display: grid;
             grid-template-columns: repeat(4,1fr);
+        }
+        .slide1 a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
         }
         .slide1 a:hover{
             color: blue;
@@ -218,6 +231,10 @@
             margin: auto;
             text-align: center;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #bottom-1 a{
+            text-decoration: none;
+            color: black;
         }
         #bottom-1 a:hover{
             color: blue;
@@ -292,35 +309,240 @@
         #footer-lower img{
             width: 10%;
         }
+        /* Overlay */
+        .overlay{
+            width: 100%;
+            position: fixed;
+            top: 0%;
+            background: rgba(0, 0, 0, 0.5);
+            height: 100vh;
+            z-index: -1;
+            opacity: 0;
+        }
+        .showoverlay{
+            opacity: 1;
+            z-index: 1;
+        }
+        /* Submenu search div */
+        .submenu-searchbar{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 450px;
+            border-radius: 5px;
+            background-color: white;
+            position: absolute;
+            left: 50%;
+            top: -40%;
+            transform: translate(-50%,-50%);
+        }
+        .showsubmenu{
+            top: 40%;
+            z-index: 2;
+        }
+        .submenu-searchbar div{
+            display: flex;
+            align-items: center;
+            width: 400px;
+            margin: 10px;
+            padding: 10px 10px;
+            background-color: white;
+        }
+        .submenu-searchbar input{
+            padding: 10px 0px;
+            border: none;
+            width: 100%;
+            margin-left: 10px;
+        }
+        .submenu-searchbar div:first-child{
+            border-bottom: 2px solid black;
+        }
+        .submenu-searchbar div:last-child:hover{
+            background-color: lightgray;
+            cursor: pointer;
+        }
+        .submenu-searchbar div:last-child p{
+            margin-left: 10px;
+        }
+        .submenu-searchbar div:last-child i{
+            background-color: black;
+            color: white;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+        }
+        /* Sign in options */
+        .banner{
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: grid;
+            background-color: white;
+            grid-template-columns: repeat(1,1fr);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .showbanner{
+            top: 50%;
+            z-index: 1;
+        }
+        .banner div{
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+            border-radius: 25px;
+            width: 80%;
+            margin: auto;
+            margin-bottom: 10px;
+            border: 2px solid black;
+            padding: 10px 5px;
+        }
+        .banner  a{
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+        .banner div:hover{
+            background: lightblue;
+        }
+        .banner img{
+            width: 20%;
+            margin-left: 40%;
+        }
+        .banner span{
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        .banner span:hover{
+            cursor: pointer;
+        }
+        /* Sign In */
+        .signin{
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: grid;
+            background-color: white;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            grid-template-columns: repeat(1,1fr);
+            border-radius: 10px;
+            max-width: 400px;
+        }
+        .showsignin{
+            top: 50%;
+            z-index: 1;
+        }
+        .signin input{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .signin > button{
+            background-color: black;
+            color: white;
+            width: 60%;
+            margin: auto;
+            padding: 10px 0px;
+            border-radius: 25px;
+            margin-top: 10px;
+        }
+        .signin img{
+            width: 20%;
+            margin-left: 40%;
+        }
+        .signin input{
+            padding: 5px;
+        }
+        .signin > button:hover{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <!-- Submenu search div -->
+    <div class="submenu-searchbar">
+        <div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" name="" id="searchbar1" placeholder="Where to?">
+        </div>
+        <div>
+            <i class="fa-solid fa-location-arrow"></i>
+            <p>Nearby</p>
+        </div>
+    </div>
+    <!-- Overlay -->
+    <div onclick="closeSearch()" class="overlay"></div>
     <!-- Nav -->
     <nav>
-        <img src="yatrabuddy.png" alt="Logo">
+        <img onclick="window.location.href='/index.html'" src="yatrabuddy.png" alt="Logo">
     <div>
         <a href=""><i class="fa-solid fa-pen"></i> Review</a>
         <a href=""><i class="fa-solid fa-heart"></i> Trips</a>
         <a href=""><i class="fa-solid fa-bell"></i> Alerts</a>
-        <a href="/signinoptions.html" id="sign-in">Sign In</a>
-        <a href=""><i class="fa-solid fa-cart-shopping"></i> Basket</a>
+        <a href="#" id="sign-in">Sign In</a>
+        <a href="/basket.html"><i class="fa-solid fa-cart-shopping"></i> Basket</a>
     </div>
     </nav>
+    <!-- Sign in options -->
+    <div class="banner">
+        <span>X</span>
+        <img src="/plane-gc79bf70c5_1280.png" alt="">
+        <h2>Sign In to unlock the best of YatraBuddy</h2>
+        <div>
+            <i class="fa-brands fa-google"></i>
+            <a href="https://accounts.google.com/o/oauth2/auth/identifier?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fwww.tripadvisor.in%3Fid%3Dauth670216&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&include_granted_scopes=true&client_id=1070328450902.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fwww.tripadvisor.in&fetch_basic_profile=true&gsiwebsdk=2&service=lso&o2v=1&flowName=GeneralOAuthFlow">Continue with Google</a>
+        </div>
+        <div>
+            <i class="fa-brands fa-facebook"></i>
+            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=162729813767876&kid_directed_site=0&app_id=162729813767876&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv6.0%2Fdialog%2Foauth%3Fapp_id%3D162729813767876%26cbt%3D1671103896530%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df3287b1808c284%2526domain%253Dwww.tripadvisor.in%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.tripadvisor.in%25252Ff2e5feace07f24%2526relation%253Dopener%26client_id%3D162729813767876%26display%3Dpopup%26domain%3Dwww.tripadvisor.in%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.tripadvisor.in%252FRegistrationController%253Fflow%253Dsign_up_and_save%2526flowOrigin%253Dlogin%2526pid%253D40486%2526hideNavigation%253Dtrue%2526userRequestedForce%253Dtrue%2526returnTo%253D%2526isLithium%253Dtrue%2526locationId%253D-1%2526requireSecure%253Dfalse%26locale%3Den_GB%26logger_id%3Df1685b23a73e7c8%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df3ba6104f2e798%2526domain%253Dwww.tripadvisor.in%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.tripadvisor.in%25252Ff2e5feace07f24%2526relation%253Dopener%2526frame%253Df1cfae4126c88f%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Demail%252Cuser_friends%26sdk%3Djoey%26version%3Dv6.0%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3ba6104f2e798%26domain%3Dwww.tripadvisor.in%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.tripadvisor.in%252Ff2e5feace07f24%26relation%3Dopener%26frame%3Df1cfae4126c88f%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=en_GB&pl_dbl=0">Continue with Facebook</a>
+        </div>
+        <div>
+            <i class="fa-solid fa-envelope"></i>
+            <a id="emailOption" href="#">Continue with Email</a>
+        </div>
+    </div>
+    <!-- Sign in page -->
+    <div class="signin">
+        <img src="/plane-gc79bf70c5_1280.png" alt="">
+        <h2 id="heading">Welcome back.</h2>
+        <label for="email">Email address</label>
+        <input type="email" name="email" id="signinMail" placeholder="Email">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="signinPass" placeholder="Password">
+        <a href="#">Forgot password?</a>
+        <button id="toIndex"><a id="gotoMain">Sign In</a></button>
+        <a id="signupBTN" href="/signup.html">Not a member?</a>
+    </div>
     <!-- Top Menu -->
     <div id="top-menu">
-        <div>
+        <div onclick="showSearch()">
             <p>Hotels</p>
             <i class="fa-solid fa-hotel"></i>
         </div>
-        <div>
+        <div onclick="showSearch()">
             <p>Holiday Homes</p>
             <i class="fa-solid fa-house"></i>
         </div>
-        <div>
+        <div onclick="showSearch()">
             <p>Things To Do</p>
             <i class="fa-solid fa-clipboard-list"></i>
         </div>
-        <div>
+        <div onclick="showSearch()">
             <p>Restaurant</p>
             <i class="fa-solid fa-utensils"></i>
         </div>
@@ -343,10 +565,10 @@
     <h2>Ways to Tour Pune</h2>
     <h3>Book these experiences for a close-up look at Pune.</h3>
     <div class="slide">
-        <div>
-        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/8e/b8/c8/caption.jpg?w=600&h=600&s=1" alt="">
-        <a href="https://www.tripadvisor.in/AttractionProductReview-g297654-d17807864-Immersive_culture_tour_of_Pune_by_private_car_with_guide_and_local_lunch-Pune_Pune.html">Immersive culture tour of Pune by private car with guide and local lunch</a>
-        <p>from ₹9,809 per adult</p>
+        <div>    
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/8e/b8/c8/caption.jpg?w=600&h=600&s=1" alt="">
+            <a href="https://www.tripadvisor.in/AttractionProductReview-g297654-d17807864-Immersive_culture_tour_of_Pune_by_private_car_with_guide_and_local_lunch-Pune_Pune.html">Immersive culture tour of Pune by private car with guide and local lunch</a>
+            <p>from ₹9,809 per adult</p>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7c/bc/31/caption.jpg?w=600&h=600&s=1" alt="">
@@ -356,7 +578,7 @@
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/8e/44/da/caption.jpg?w=600&h=600&s=1" alt="">
             <a href="https://www.tripadvisor.in/AttractionProductReview-g297654-d17774937-Pune_Walking_Tour_with_a_Punekar-Pune_Pune_District_Maharashtra.html">Immersive culture tour of Pune by private car with guide and local lunch</a>
-            <p>from ₹6,400 per group</p>
+            <p>from ₹6,400 per adult</p>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/28/d2/43/caption.jpg?w=600&h=600&s=1" alt="">
@@ -429,38 +651,36 @@
     <div class="slide1">
         <div>
         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/6d/df/ec/fireworks-yao-rooftop.jpg?w=300&h=300&s=1" alt="">
-        <a href="">Bangkok,Thailand</a>
+        <a href="https://www.tripadvisor.in/Tourism-g293916-Bangkok-Vacations.html">Bangkok,Thailand</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/33/f3/33/caption.jpg?w=300&h=300&s=1" alt="">
-            <a href="">Taipei,Taiwan</a>
+            <a href="https://www.tripadvisor.in/Tourism-g293913-Taipei-Vacations.html">Taipei,Taiwan</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/62/c3/88/caption.jpg?w=300&h=300&s=1" alt="">
-            <a href="">Kyoto,Japan</a>
+            <a href="https://www.tripadvisor.in/Tourism-g298564-Kyoto_Kyoto_Prefecture_Kinki-Vacations.html">Kyoto,Japan</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/7c/eb/cb/photo0jpg.jpg?w=300&h=300&s=1" alt="">
-            <a href="">Tokyo,Japan</a>
+            <a href="https://www.tripadvisor.in/Tourism-g298184-Tokyo_Tokyo_Prefecture_Kanto-Vacations.html">Tokyo,Japan</a>
         </div>
 
         <div>
         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/7b/23/c5/photo2jpg.jpg?w=300&h=-1&s=1" alt="">
-        <a href="">Seoul,South Korea</a>
+        <a href="https://www.tripadvisor.in/Tourism-g294197-Seoul-Vacations.html">Seoul,South Korea</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/2c/18/1f/photo9jpg.jpg?w=300&h=-1&s=1" alt="">
-            <a href="">Bali,Indonesia</a>
-    
+            <a href="https://www.tripadvisor.in/Tourism-g294226-Bali-Vacations.html">Bali,Indonesia</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/29/d4/40/night-view-of-the-hsbc.jpg?w=300&h=300&s=1" alt="">
-            <a href="">Singapore,Singapore</a>
-
+            <a href="https://www.tripadvisor.in/Tourism-g294265-Singapore-Vacations.html">Singapore,Singapore</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f7/a4/bd/baga-beach.jpg?w=300&h=300&s=1" alt="">
-            <a href="">Goa,India</a>
+            <a href="https://www.tripadvisor.in/Tourism-g297604-Goa-Vacations.html">Goa,India</a>
        </div>
     </div>
   </div>
@@ -470,15 +690,15 @@
     <div id="bottom-1">
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/ff/64/b3/b1e43685-a4e8-4163.jpg?w=400&h=300&s=1" alt="">
-            <a href="">Best new things to do in Japan 2022</a>
+            <a href="https://www.tripadvisor.com/Articles-lAH9mFn54D0k-Japan_new_things_to_do.html">Best new things to do in Japan 2022</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/ff/65/7b/3f7b9f66-88a6-40e8.jpg?w=400&h=300&s=1" alt="">
-            <a href="">7 Bangkok hotels that highlight Thailand's spectacular architecture</a>
+            <a href="https://www.tripadvisor.com/Articles-lGrOLMsqZJeo-Thai_house_hotels_bangkok.html">7 Bangkok hotels that highlight Thailand's spectacular architecture</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/ff/b7/8b/b03fabe4-8177-471a.jpg?w=400&h=-1&s=1" alt="">
-            <a href="">Guide to planning a day trip to the Blue Mountains from Sydney</a>
+            <a href="https://www.tripadvisor.com/Articles-ltr3X9yECMX0-Day_trip_to_blue_mountains_from_sydney.html">Guide to planning a day trip to the Blue Mountains from Sydney</a>
         </div>
     </div>
   </div>
@@ -557,24 +777,5 @@
 </body>
 
 
-<script>
-    let slides = document.querySelectorAll(".slide");
-    let counter=0;
-    slides.forEach((slide,index)=>{
-        slide.style.left = `${index*100}%`
-    });
-    const slideDiv = () => {
-        slides.forEach((slide)=>{
-            slide.style.transform = `translateX(-${counter*100}%)`
-        })
-    }
-    const goNext = () => {
-        counter++
-        slideDiv()
-    };
-    const goPrev = () => {
-        counter--
-        slideDiv()
-    }
-</script>
+<script src="/index.js"></script>
 </html>
