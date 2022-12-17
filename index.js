@@ -11,10 +11,12 @@ const slideDiv = () => {
 }
 const goNext = () => {
     counter++
+    if(counter == 3) counter=0;
     slideDiv()
 };
 const goPrev = () => {
     counter--
+    if(counter < 0) counter=0;
     slideDiv()
 }
 // Search bar functionality
@@ -28,6 +30,7 @@ function closeSearch() {
     document.querySelector(".submenu-searchbar").classList.remove("showsubmenu");
     document.querySelector(".banner").classList.remove("showbanner");
     document.querySelector(".signin").classList.remove("showsignin");
+    document.querySelector(".signup").classList.remove("showsignup");
 }
 // Sign in btn functionality (Show sign in options banner)
 let signinBTN=document.getElementById("sign-in");
@@ -43,7 +46,7 @@ emailOption.addEventListener("click",()=>{
 })
 let heading=document.getElementById("heading");
 let toIndex=document.getElementById("toIndex");
-let userData= JSON.parse(localStorage.getItem("userdata"));
+let userData= JSON.parse(localStorage.getItem("userdata")) || [];
 let email = document.getElementById("signinMail");
 let password = document.getElementById("signinPass");
 let signinNav=document.getElementById("sign-in");
@@ -53,11 +56,33 @@ toIndex.addEventListener("click",()=>{
     if(element.email==email.value && element.password==password.value){
         alert("Sign-In Successfull")
         gotoMain.href="/index.html";
+        signinNav.style.display="none"
     }
     else{
-        alert("Wrong Email/Password")
+        // alert("Wrong Email/Password")
         heading.innerText="Wrong email/password";
-        window.location.href="/index.html";
+        // window.location.href="/index.html";
     }
     });
+})
+// Sign up page
+let signupBTN=document.getElementById('signupBTN');
+signupBTN.addEventListener("click",()=>{
+    document.querySelector(".signin").classList.remove("showsignin");
+    document.querySelector(".signup").classList.add("showsignup");
+})
+let signupemail = document.getElementById("signupMail");
+let signuppassword = document.getElementById("signupPass");
+let joinBTN=document.getElementById("joinBTN");
+joinBTN.addEventListener("click",()=>{
+    // alert("Now Sign-In to your account from home-page");
+    formData={
+        email: signupemail.value,
+        password: signuppassword.value
+    }
+    userData.push(formData);
+    console.log(userData);
+    localStorage.setItem("userdata",JSON.stringify(userData))
+    document.querySelector(".signin").classList.add("showsignin");
+    document.querySelector(".signup").classList.remove("showsignup");
 })

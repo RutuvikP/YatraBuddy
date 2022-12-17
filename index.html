@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <title>yatrabuddy</title>
+    <title>YatraBuddy</title>
     <style>
         /* nav bar */
         nav{
-            width: 90%;
+            width: 100%;
             height: 80px;
             margin: auto;
             /* position: sticky; */
@@ -111,7 +111,7 @@
             height: 100%;
             display: flex;
             position: absolute;
-            top: 25px;
+            top: 30px;
             /* border: 1px solid blue; */
         }
         .slide a{
@@ -258,6 +258,10 @@
             padding-bottom: 5px;
             box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
         }
+        #bottom-2 a{
+            text-decoration: none;
+            color: black;
+        }
         #bottom-2 a:hover{
             color: blue;
             text-decoration: underline;
@@ -273,6 +277,7 @@
             height: 350px;
             margin-top: 80px;
             background-color: #FFFDE7;
+            width: 100%;
         }
         #footer-upper div{
             display: flex;
@@ -288,6 +293,8 @@
         }
         #footer-upper a{
             font-weight: bold;
+            text-decoration: none;
+            color: black;
         }
         #business{
             padding-top: 30px;
@@ -304,7 +311,13 @@
         #footer-lower a{
             margin-left: 10px;
             font-weight: bold;
+            color: black;
             text-decoration: underline;
+        }
+        #footer-lower p{
+            margin-left: 10px;
+            margin-bottom: 0px;
+            font-weight: lighter;
         }
         #footer-lower img{
             width: 10%;
@@ -471,6 +484,50 @@
         .signin > button:hover{
             cursor: pointer;
         }
+        /* Sign up */
+        .signup{
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: grid;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            grid-template-columns: repeat(1,1fr);
+            border-radius: 10px;
+            max-width: 400px;
+        }
+        .showsignup{
+            top: 50%;
+            z-index: 1;
+        }
+        .signup input{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .signup button{
+            background-color: black;
+            color: white;
+            width: 60%;
+            margin: auto;
+            padding: 10px 0px;
+            border-radius: 25px;
+            margin-top: 10px;
+        }
+        .signup img{
+            width: 20%;
+            margin-left: 40%;
+        }
+        .signup input{
+            padding: 5px;
+        }
+        .signup a:first-child{
+            text-decoration: none;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -490,13 +547,13 @@
     <!-- Nav -->
     <nav>
         <img onclick="window.location.href='/index.html'" src="yatrabuddy.png" alt="Logo">
-    <div>
-        <a href=""><i class="fa-solid fa-pen"></i> Review</a>
-        <a href=""><i class="fa-solid fa-heart"></i> Trips</a>
-        <a href=""><i class="fa-solid fa-bell"></i> Alerts</a>
-        <a href="#" id="sign-in">Sign In</a>
+       <div>
+        <a href="#"><i class="fa-solid fa-pen"></i> Review</a>
+        <a href="#"><i class="fa-solid fa-heart"></i> Trips</a>
+        <a href="#"><i class="fa-solid fa-bell"></i> Alerts</a>
+        <button class="sign-in" id="sign-in">Sign In</button>
         <a href="/basket.html"><i class="fa-solid fa-cart-shopping"></i> Basket</a>
-    </div>
+        </div>
     </nav>
     <!-- Sign in options -->
     <div class="banner">
@@ -526,7 +583,18 @@
         <input type="password" name="password" id="signinPass" placeholder="Password">
         <a href="#">Forgot password?</a>
         <button id="toIndex"><a id="gotoMain">Sign In</a></button>
-        <a id="signupBTN" href="/signup.html">Not a member?</a>
+        <a id="signupBTN" href="#">Not a member?</a>
+    </div>
+    <!-- Sign up page -->
+    <div class="signup">
+        <img src="/plane-gc79bf70c5_1280.png" alt="">
+        <h2>Join to unlock best of YatraBuddy</h2>
+        <label for="email">Email address</label>
+        <input type="email" name="email" id="signupMail" placeholder="Email">
+        <label for="password">Create Password</label>
+        <input type="password" name="password" id="signupPass" placeholder="Password">
+        <button id="joinBTN"><a href="#">Join</a></button>
+        <a href="#">Already a member?</a>
     </div>
     <!-- Top Menu -->
     <div id="top-menu">
@@ -709,19 +777,19 @@
     <div id="bottom-2">
        <div>
         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c0/b4/49/caption.jpg?w=300&h=300&s=1&cx=718&cy=768&chk=v1_2630c9aa1554550b8519" alt="">
-        <a href="">Kyoto,Japan</a>
+        <a href="https://www.tripadvisor.in/Tourism-g298564-Kyoto_Kyoto_Prefecture_Kinki-Vacations.html">Kyoto,Japan</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/33/f7/12/caption.jpg?w=300&h=300&s=1" alt="">
-            <a href="">Hanoi,Vietnam</a>
+            <a href="https://www.tripadvisor.in/Tourism-g293924-Hanoi-Vacations.html">Hanoi,Vietnam</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/62/c3/88/caption.jpg?w=300&h=300&s=1" alt="">
-            <a href="">Singapore,Singapore</a>
+            <a href="https://www.tripadvisor.in/Tourism-g294265-Singapore-Vacations.html">Singapore,Singapore</a>
         </div>
         <div>
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/6a/ff/2a/caption.jpg?w=300&h=300&s=1&cx=7014&cy=3760&chk=v1_14690e40614ca9b48b73" alt="">
-            <a href="">Dubai,UAE</a>
+            <a href="https://www.tripadvisor.in/Tourism-g295424-Dubai_Emirate_of_Dubai-Vacations.html">Dubai,UAE</a>
         </div>
     </div>
   </div>
@@ -765,6 +833,7 @@
     <div id="footer-lower">
         <img src="/plane-gc79bf70c5_1280.png" alt="">
         <div>
+            <p>©️ 2022 YatraBuddy LLC All rights reserved</p>
             <a href="#">Terms of Use</a>
             <a href="#">Privacy and Cookies Statement</a>
             <a href="#">Cookie Consent</a>

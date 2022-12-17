@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>YatraBuddy</title>
     <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
         /* Nav bar */
          nav{
             width: 100%;
@@ -143,6 +146,46 @@
             text-align: center;
             border-radius: 50%;
         }
+        /* mid-body */
+        .mid-body{
+            width: 75%;
+            margin: auto;
+        }
+        .mid-body a{
+            color: black;
+        }
+        /* Footer */
+        footer{
+            height: 130px;
+            margin-top: 80px;
+            background-color: #FFFDE7;
+            position: fixed;
+            width: 100%;
+            bottom: 2%;
+        }
+        #footer-lower{
+            display: flex;
+            width: 800px;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            margin-left: 10%;
+            margin-top: 10px;
+        }
+        #footer-lower a{
+            margin-left: 10px;
+            font-weight: bold;
+            color: black;
+            text-decoration: underline;
+        }
+        #footer-lower p{
+            margin-left: 10px;
+            margin-bottom: 0px;
+            font-weight: lighter;
+        }
+        #footer-lower img{
+            width: 10%;
+        }
     </style>
 </head>
 <body>
@@ -212,6 +255,29 @@
         </div>
     </div>
     </div>
+    <!-- Mid Body -->
+    <div class="mid-body">
+        <h1>Basket</h1>
+        <a href="#"><i class="fa-solid fa-arrow-left"></i> See all things to do</a>
+        <h1>Your Basket is Empty</h1>
+        <h2>Add Things to Do to your basket. Now you can shop for tours, attractions, and experiences. Explore now</h2>
+        <hr>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div id="footer-lower">
+            <img src="/plane-gc79bf70c5_1280.png" alt="">
+            <div>
+                <p>©️ 2022 YatraBuddy LLC All rights reserved</p>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy and Cookies Statement</a>
+                <a href="#">Cookie Consent</a>
+                <a href="#">Site Map</a>
+                <a href="#">How the site works</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
 </body>
 <script>
     function showSearch() {
