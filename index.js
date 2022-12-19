@@ -56,7 +56,6 @@ toIndex.addEventListener("click",()=>{
     if(element.email==email.value && element.password==password.value){
         alert("Sign-In Successfull")
         gotoMain.href="/index.html";
-        signinNav.style.display="none"
     }
     else{
         // alert("Wrong Email/Password")
