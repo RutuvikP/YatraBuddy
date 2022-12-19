@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>YatraBuddy</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* Nav bar */
+         nav{
+            width: 100%;
+            height: 80px;
+            margin: auto;
+            /* position: sticky; */
+            /* z-index: 9; */
+            /* top: 0; */
+            display: flex;
+            background-color: white;
+            align-items: center;
+            justify-content: space-around;
+            border-bottom: 1px solid lightgrey;
+        }
+        nav > div{
+            width: 500px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-weight: bolder;
+        }
+        #search-bar{
+            border: 1px solid lightgrey;
+            border-radius: 50px;
+            height: 50px;
+            margin-left: -30px;
+        }
+        #search-bar input{
+            width: 80%;
+            padding: 5px 15px;
+            border: none;
+        }
+        nav a{
+            text-decoration: none;
+            color: black;
+        }
+        nav img{
+            width: 30%;
+            margin-left: -50px;
+        }
+        nav img:hover{
+            cursor: pointer;
+        }
+        #sign-in{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #sign-in:hover{
+            background-color: lightblue;
+            cursor: pointer;
+        }
+        /* Top menu */
+        #top-menu-parent{
+            width: 100%;
+            border-bottom: 1px solid lightgrey;
+        }
+        #top-menu{
+            width: 80%;
+            display: flex;
+            margin: auto;
+        }
+        #top-menu  div{
+            border-radius: 10px;
+            display: flex;
+            width: 8;
+            margin: auto;
+        }
+        #top-menu > div:hover{
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        /* Overlay */
+        .overlay{
+            width: 100%;
+            position: fixed;
+            top: 0%;
+            background: rgba(0, 0, 0, 0.5);
+            height: 100vh;
+            z-index: -1;
+            opacity: 0;
+        }
+        .showoverlay{
+            opacity: 1;
+            z-index: 1;
+        }
+        /* Submenu search div */
+        .submenu-searchbar{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 450px;
+            border-radius: 5px;
+            background-color: white;
+            position: absolute;
+            left: 48%;
+            top: -50%;
+            transform: translate(-50%,-50%);
+        }
+        .showsubmenu{
+            top: 12%;
+            z-index: 2;
+        }
+        .submenu-searchbar div{
+            display: flex;
+            align-items: center;
+            width: 400px;
+            margin: 10px;
+            padding: 10px 10px;
+            background-color: white;
+        }
+        .submenu-searchbar input{
+            padding: 10px 0px;
+            border: none;
+            width: 100%;
+            margin-left: 10px;
+        }
+        .submenu-searchbar div:first-child{
+            border-bottom: 2px solid black;
+        }
+        .submenu-searchbar div:last-child:hover{
+            background-color: lightgray;
+            cursor: pointer;
+        }
+        .submenu-searchbar div:last-child p{
+            margin-left: 10px;
+        }
+        .submenu-searchbar div:last-child i{
+            background-color: black;
+            color: white;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+        }
+        /* mid-body */
+        .mid-body{
+            width: 75%;
+            margin: auto;
+        }
+        .mid-body a{
+            color: black;
+        }
+        /* Footer */
+        footer{
+            height: 130px;
+            margin-top: 80px;
+            background-color: #FFFDE7;
+            position: fixed;
+            width: 100%;
+            bottom: 2%;
+        }
+        #footer-lower{
+            display: flex;
+            width: 800px;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            margin-left: 10%;
+            margin-top: 10px;
+        }
+        #footer-lower a{
+            margin-left: 10px;
+            font-weight: bold;
+            color: black;
+            text-decoration: underline;
+        }
+        #footer-lower p{
+            margin-left: 10px;
+            margin-bottom: 0px;
+            font-weight: lighter;
+        }
+        #footer-lower img{
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Submenu search div -->
+    <div class="submenu-searchbar">
+        <div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" name="" id="searchbar1">
+        </div>
+        <div>
+            <i class="fa-solid fa-location-arrow"></i>
+            <p>Nearby</p>
+        </div>
+    </div>
+    <!-- Overlay -->
+    <div onclick="closeSearch()" class="overlay"></div>
+    <!-- Nav Bar -->
+    <nav>
+        <img onclick="window.location.href='/index.html'" src="yatrabuddy.png" alt="Logo">
+        <div id="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" onclick="showSearch()">
+        </div>
+    <div>
+        <a href=""><i class="fa-solid fa-pen"></i> Review</a>
+        <a href=""><i class="fa-solid fa-heart"></i> Trips</a>
+        <a href=""><i class="fa-solid fa-bell"></i> Alerts</a>
+        <a href="#" id="sign-in">Sign In</a>
+        <a href=""><i class="fa-solid fa-cart-shopping"></i> Basket</a>
+    </div>
+    </nav>
+    <!-- Top menu -->
+    <div id="top-menu-parent">
+    <div id="top-menu">
+        <div>
+            <p>Home</p>
+        </div>
+        <div>
+            <p>Hotels</p>
+        </div>
+        <div>
+            <p>Things To Do</p>
+        </div>
+        <div>
+            <p>Restaurant</p>
+        </div>
+        <div>
+            <p>Flights</p>
+        </div>
+        <div>
+            <p>Holiday Homes</p>
+        </div>
+        <div>
+            <p>Shopping</p>
+        </div>
+        <div>
+            <p>Package Holidays</p>
+        </div>
+        <div>
+            <p>Cruises</p>
+        </div>
+        <div>
+            <p>Car Hire</p>
+        </div>
+        <div>
+            <p><i class="fa-solid fa-ellipsis"></i></p>
+        </div>
+    </div>
+    </div>
+    <!-- Mid Body -->
+    <div class="mid-body">
+        <h1>Basket</h1>
+        <a href="#"><i class="fa-solid fa-arrow-left"></i> See all things to do</a>
+        <h1>Your Basket is Empty</h1>
+        <h2>Add Things to Do to your basket. Now you can shop for tours, attractions, and experiences. Explore now</h2>
+        <hr>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div id="footer-lower">
+            <img src="/plane-gc79bf70c5_1280.png" alt="">
+            <div>
+                <p>©️ 2022 YatraBuddy LLC All rights reserved</p>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy and Cookies Statement</a>
+                <a href="#">Cookie Consent</a>
+                <a href="#">Site Map</a>
+                <a href="#">How the site works</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function showSearch() {
+    document.querySelector(".overlay").classList.add("showoverlay");
+    document.querySelector(".submenu-searchbar").classList.add("showsubmenu");
+    }
+
+    function closeSearch() {
+    document.querySelector(".overlay").classList.remove("showoverlay");
+    document.querySelector(".submenu-searchbar").classList.remove("showsubmenu");
+    }
+</script>
+</html>
